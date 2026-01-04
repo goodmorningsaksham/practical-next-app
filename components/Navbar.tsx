@@ -23,7 +23,7 @@ export default function Navbar() {
         `
     }
 
-    const routes = ['/home','/about','/contact'];
+    const routes = ['/','/about','/contact'];
 
     return(
         <nav className="w-full bg-black text-white flex justify-between items-center px-10 py-6">
@@ -31,7 +31,7 @@ export default function Navbar() {
             <div className="flex gap-10">
                 {routes.map((path) => (
                     <Link key={path} href={path} className={navLink(path)}>
-                        {path.replace("/","").toUpperCase()}
+                        {path === '/' ? 'HOME' : path.replace("/","").toUpperCase()}
                         <span className={underline(path)}/>
                     </Link>
                 ))}               
